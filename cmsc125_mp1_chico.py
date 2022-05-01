@@ -1,5 +1,5 @@
 from math import floor
-from msvcrt import getch
+from getch import getch
 import random
 
 class User:

@@ -1,0 +1,17 @@
+[[package]]
+name = "py-getch"
+version = "1.0.1"
+description = "Portable getch() for Python."
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "65d2f027ab704d8d9353e31d4950f261664789e4a5318c852514ef516f10465a"
+
+[metadata.files]
+py-getch = [
+    {file = "py-getch-1.0.1.zip", hash = "sha256:1b703d6b049c606df64c7ea76a137888c2e3e800ba5c220bac18804d3a1ed1bd"},
+]

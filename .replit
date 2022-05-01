@@ -1,0 +1,2 @@
+language = "python3"
+run = "python cmsc125_mp1_chico.py"
