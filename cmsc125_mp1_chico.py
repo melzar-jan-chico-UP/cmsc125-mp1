@@ -1,5 +1,6 @@
 from math import floor
-from getch import getch
+from msvcrt import getch    # use this if running in your local
+#from getch import getch    # use this if running in repl.it
 import random
 
 class User:
@@ -119,7 +120,7 @@ def checkResources(resource_list:'list[Resource]') -> bool:
 def main():
     user_list:list[User] = []
     resource_list:list[Resource] = []
-    timer = 1
+    timer = 0
     
     # ! (1) generate user list
     for i in range(random.randint(1, 30)):
@@ -134,10 +135,22 @@ def main():
         chosenResource:Resource = random.choice(resource_list)
         chosenResource.addTask(user, random.randint(1,30))
 
-    # ! main program
+    # ! initializing resources    
+    print('*'*50)
+    print(f'USERS: {user_list}')
+    print(f'RESOURCES: {resource_list}')
+    print(f'TIME: {timer}s\n')
+
     for resource in resource_list:
         resource.start()
-    
+        print(resource.stats())
+
+    print('*'*50 + '\n')
+
+    getch()
+    timer += 1
+
+    # ! main program
     while checkResources(resource_list):
         print('*'*50)
         print(f'USERS: {user_list}')
@@ -146,10 +159,10 @@ def main():
 
         for resource in resource_list:
             resource.update()
-        getch()
 
         print('*'*50 + '\n')
-
+        
+        getch()
         timer += 1
 
 main()
