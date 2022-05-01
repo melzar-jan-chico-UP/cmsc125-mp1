@@ -1,3 +1,15 @@
+"""
+    FILE:       cmsc125_mp1_chico.py
+    ABOUT:      Implement a time-sharing system (with multiprogramming)
+
+    NAME:       Melzar Jan E. Chico
+    COURSE:     CMSC125 B
+    DATE:       2022 March 16
+    TASK:       Machine Problem 1
+
+    NOTE:       When running local, please use `from msvcrt import getch` instead when using getch(). Thank you!
+"""
+
 from math import floor
 #from msvcrt import getch    # use this if running in your local
 from getch import getch    # use this if running in repl.it
