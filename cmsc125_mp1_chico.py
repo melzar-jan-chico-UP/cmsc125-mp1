@@ -1,6 +1,6 @@
 from math import floor
-from msvcrt import getch    # use this if running in your local
-#from getch import getch    # use this if running in repl.it
+#from msvcrt import getch    # use this if running in your local
+from getch import getch    # use this if running in repl.it
 import random
 
 class User:
