@@ -147,6 +147,15 @@ def main():
         chosenResource:Resource = random.choice(resource_list)
         chosenResource.addTask(user, random.randint(1,30))
 
+    # ! query
+    print("Do you want to print the results ALL AT ONCE? (y/n)")
+    userChoice = input("CHOICE: ")
+
+    while userChoice not in ['y', 'n']:
+        userChoice = input("Try again! - CHOICE: ")
+    
+    print()
+
     # ! initializing resources    
     print('*'*50)
     print(f'USERS: {user_list}')
@@ -157,12 +166,15 @@ def main():
         resource.start()
         print(resource.stats())
 
-    print('*'*50 + '\n')
+    print('*'*50)
 
-    getch()
+    if userChoice == 'n':
+        print("Press any key to continue.")
+        getch()
     timer += 1
+    print()
 
-    # ! main program
+    # ! main loop
     while checkResources(resource_list):
         print('*'*50)
         print(f'USERS: {user_list}')
@@ -172,9 +184,12 @@ def main():
         for resource in resource_list:
             resource.update()
 
-        print('*'*50 + '\n')
+        print('*'*50)
         
-        getch()
+        if userChoice == 'n':
+            print("Press any key to continue.")
+            getch()
         timer += 1
+        print()
 
 main()
